@@ -17,8 +17,12 @@ What should be working: (its all optional if something is to difficult can be dr
 The website should show the map centered on Berlin. (works)
 The user should be able to create markers by double clicking anywhere on the map. (works)
 The user should be able to click on any marker on the map and access the information stored in the marker. (works)
-The user should be able to press a key and create marker with a different symbol then on click. (works)
-The marker should clickCount++ each time clicked. (/codeIdeas)
+The user should be able to rightclick and create marker with a different symbol then on click. (works)
+(The user should be able to drag the marker ?)
+The marker should clickCount++ each time clicked. (/codeIdeas)  !
+The user should be able to write something in the marker. (works)
 Maybe a login/register page. (coming soon)
+Set some permanent marker in different color
+Set labels for some of them f.e. B for Bar, P for Park, C for Cafe, F for Food
+Replace Dog icon by watch icon, it will show when people are planning to go there.
 
-similar project i just found: https://it-stack.de/?s=location+map+interactive&submit=Suchen
