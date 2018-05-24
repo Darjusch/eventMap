@@ -7,7 +7,78 @@ function initMap() {
         center: {lat: 52.49359, lng:  13.44538},
         zoom: 16
     });
-
+    var markercode = new google.maps.Marker({
+        position: {lat: 52.4940407, lng:   13.446276699999999 },
+        map: map,
+        title: 'Hello World!',
+        label: "CODE"
+    });
+    var marker1 = new google.maps.Marker({
+        position: {lat: 52.499907, lng:   13.4447055},
+        map: map,
+        title: 'Hello World!',
+        label: "F"
+    });
+    var marker2 = new google.maps.Marker({
+        position: {lat: 52.5011464, lng:  13.442625799999973 },
+        map: map,
+        title: 'Hello World!',
+        label: "F"
+    });
+    var marker3 = new google.maps.Marker({
+        position: {lat: 52.49314409999999, lng:   13.446674099999996 },
+        map: map,
+        title: 'Hello World!',
+        label: "F"
+    });
+    var marker4 = new google.maps.Marker({
+        position: {lat: 52.4941122, lng:  13.437756199999967},
+        map: map,
+        title: 'Hello World!',
+        label: "C"
+    });
+    var marker5 = new google.maps.Marker({
+        position: {lat: 52.4933624, lng:   13.436901600000056 },
+        map: map,
+        title: 'Hello World!',
+        label: "C"
+    });
+    var marker6 = new google.maps.Marker({
+        position: {lat: 52.4934326, lng:  13.438335000000052 },
+        map: map,
+        title: 'Hello World!',
+        label: "C"
+    });
+    var marker7 = new google.maps.Marker({
+        position: {lat: 52.4971441, lng:   13.451196100000061 },
+        map: map,
+        title: 'Hello World!',
+        label: "B"
+    });
+    var marker8 = new google.maps.Marker({
+        position: {lat: 52.5014704, lng:   13.441630600000053 },
+        map: map,
+        title: 'Hello World!',
+        label: "B"
+    });
+    var marker9 = new google.maps.Marker({
+        position: {lat: 52.5007809, lng:   13.439301200000045 },
+        map: map,
+        title: 'Hello World!',
+        label: "B"
+    });
+    var marker10= new google.maps.Marker({
+        position: {lat: 52.5014704, lng:   13.441630600000053 },
+        map: map,
+        title: 'Hello World!',
+        label: "B"
+    });
+    var marker11 = new google.maps.Marker({
+        position: {lat: 52.4995608, lng:   13.43929270000001 },
+        map: map,
+        title: 'Hello World!',
+        label: "B"
+    });
     // 4 hard-coded marker
 
     // var markers = new Array()
@@ -69,7 +140,7 @@ function initMap() {
 
     //working
     //When right clicking a dog icon appears.
-    var image = 'https://www.the-pet-world.com/WebRoot/StoreLDE/Shops/62377183/4F5D/0F37/0E52/2DF0/B7C5/C0A8/28BC/36E1/MAJOR-DOG-Greifball-Krake-Klein-01_xs.jpg';
+    var image = 'https://cdn1.iconfinder.com/data/icons/material-device/20/access-time-32.png';
     google.maps.event.addListener(map, "rightclick", function(event){
         addMarker(event.latLng, map);
         function addMarker(location, map) {
