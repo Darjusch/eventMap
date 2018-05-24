@@ -26,4 +26,3 @@ Set some permanent marker in different color
 Set labels for some of them f.e. B for Bar, P for Park, C for Cafe, F for Food
 Replace Dog icon by watch icon, it will show when people are planning to go there.
 
-similar project i just found: https://it-stack.de/?s=location+map+interactive&submit=Suchen
