@@ -47,14 +47,12 @@ function initMap() {
     }
 
 
-    //not working
-    // Should do the same as above only when key is pressed and the icon should be a dog.
+    //working
+    //When right clicking a dog icon appears.
     var image = 'https://www.the-pet-world.com/WebRoot/StoreLDE/Shops/62377183/4F5D/0F37/0E52/2DF0/B7C5/C0A8/28BC/36E1/MAJOR-DOG-Greifball-Krake-Klein-01_xs.jpg';
-    google.maps.event.addEventListener(map, "keypress", function(event){
+    google.maps.event.addListener(map, "rightclick", function(event){
         addMarker(event.latLng, map);
-
         function addMarker(location, map) {
-            // Add the marker at the clicked location, and add the next-available label
             var marker = new google.maps.Marker({
                 position: location,
                 map: map,
@@ -62,6 +60,7 @@ function initMap() {
             });
         }
     });
+
 
     //not working
     //Opens the description of the marker is only working for one marker right now.
