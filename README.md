@@ -16,8 +16,8 @@ What should be working: (its all optional if something is to difficult can be dr
 
 The website should show the map centered on Berlin. (works)
 The user should be able to create markers by double clicking anywhere on the map. (works)
-The user should be able to click on any marker on the map and access the information stored in the marker. (implemented doesnt work)
-The user should be able to press a key and create marker with a different symbol then on click. (implemented doesnt work)
+The user should be able to click on any marker on the map and access the information stored in the marker. (works)
+The user should be able to press a key and create marker with a different symbol then on click. (works)
 The marker should clickCount++ each time clicked. (/codeIdeas)
 Maybe a login/register page. (coming soon)
 
