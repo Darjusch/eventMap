@@ -1,20 +1,19 @@
 
-<?
-$username="username";
-$password="password";
-$database="username-databaseName";
-?>
-
 <?php
-//require("phpsqlinfo_dbinfo.php");
+require("phpsqlajax_dbinfo.php");
 
-// Gets data from URL parameters
-
-//$lat = $_GET['lat'];
-//$lng = $_GET['lng'];
+function parseToXML($htmlStr)
+{
+$xmlStr=str_replace('<','&lt;',$htmlStr);
+$xmlStr=str_replace('>','&gt;',$xmlStr);
+$xmlStr=str_replace('"','&quot;',$xmlStr);
+$xmlStr=str_replace("'",'&#39;',$xmlStr);
+$xmlStr=str_replace("&",'&amp;',$xmlStr);
+return $xmlStr;
+}
 
 // Opens a connection to a MySQL server
-$connection=mysql_connect ("localhost", $username, $password);
+$connection=mysql_connect ('localhost', $username, $password);
 if (!$connection) {
   die('Not connected : ' . mysql_error());
 }
@@ -25,20 +24,31 @@ if (!$db_selected) {
   die ('Can\'t use db : ' . mysql_error());
 }
 
-// Insert new row with user data
-$query = sprintf("INSERT INTO markers " .
-         " (id, name, address, lat, lng, type ) " .
-         " VALUES (NULL, '%s', '%s', '%s', '%s', '%s');",
-         mysql_real_escape_string($name),
-         mysql_real_escape_string($address),
-         mysql_real_escape_string($lat),
-         mysql_real_escape_string($lng),
-         mysql_real_escape_string($type));
-
+// Select all the rows in the markers table
+$query = "SELECT * FROM markers WHERE 1";
 $result = mysql_query($query);
-
 if (!$result) {
   die('Invalid query: ' . mysql_error());
 }
+
+header("Content-type: text/xml");
+
+// Start XML file, echo parent node
+echo '<markers>';
+
+// Iterate through the rows, printing XML nodes for each
+while ($row = @mysql_fetch_assoc($result)){
+  // Add to XML document node
+  echo '<marker ';
+  echo 'name="' . parseToXML($row['name']) . '" ';
+  echo 'address="' . parseToXML($row['address']) . '" ';
+  echo 'lat="' . $row['lat'] . '" ';
+  echo 'lng="' . $row['lng'] . '" ';
+  echo 'type="' . $row['type'] . '" ';
+  echo '/>';
+}
+
+// End XML file
+echo '</markers>';
 
 ?>
